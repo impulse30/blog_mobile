@@ -1,23 +1,15 @@
-Authentication authenticationFromJson(String str) => Authentication.fromJson(json.decode(str));
-
-String authenticationToJson(Authentication data) => json.encode(data.toJson());
-
-class Authentication {
+class Authentification {
   String email;
   String password;
 
-  Authentication({
-    required this.email,
-    required this.password,
+  Authentification({
+    required this.email ,
+    required this.password
   });
-
-  factory Authentication.fromJson(Map<String, dynamic> json) => Authentication(
-    email: json["email"],
-    password: json["password"],
-  );
-
-  Map<String, dynamic> toJson() => {
-    "email": email,
-    "password": password,
-  };
+  Map toJson (){
+    return{
+      "email":email,
+      "password":password
+    };
+  }
 }
